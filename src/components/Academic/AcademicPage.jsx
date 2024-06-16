@@ -28,7 +28,9 @@ export default function AcademicPage() {
 
   const fetchOffDays = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/get-off-days');
+      const response = await axios.get('http://localhost:3001/get-off-days',{
+        batch: '18'
+      });
       setOffDays(response.data.map(date => new Date(date)));
     } catch (error) {
       console.error('There was an error fetching the off days!', error);
@@ -83,22 +85,26 @@ export default function AcademicPage() {
       <div className="schedule-container">
         {batches.map((batch) => (
           <div key={batch.id} className="schedule-column gradient-border">
-            <div className="box">
-              <h3 className='live-class'>Starting Date</h3>
-              <p>{batch.start_date}</p>
+          <div className="box">
+              <h3 className='live-class'>Batch</h3>
               <p>{batch.batch}</p>
             </div>
             <div className="box">
+              <h3 className='live-class'>Starting Date</h3>
+              <p>{batch.start_date}</p>
+            </div>
+            <div className="box">
               <h3 className='live-class'>Current Week</h3>
-              <p className="current-week">{getWeekNumber(batch.start_date, currentDateTime, offDays)}</p>
+              <p className="current-week">{getWeekNumber(batch.start_date)}</p>
             </div>
             <div className="box" style={{ backgroundColor: '#fdecea' }}>
-              <h3 className='live-class'>Live Item</h3>
+              <h3 className='live-class'>Live Class</h3>
               <p className="live-class-content">{getCurrentClass(batch.batch, currentDateTime)}</p>
             </div>
           </div>
         ))}
       </div>
     </div>
+
   );
 }

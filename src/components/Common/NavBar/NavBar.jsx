@@ -15,14 +15,14 @@ const Navbar = () => {
     <nav className='nav-container home-nav'>
       <div className='nav-left'>
         <ul className='nav-ul'>
-          <li> <a href="https://www.cuet.ac.bd"><img src="cuetlogo.png" className="logo" /></a></li>
+           <a href="https://www.cuet.ac.bd"><img src="/cuetlogo.png" className="logo" /></a>
           <li><Link to="/"><span style={{ fontWeight: "bold" }}>Home</span></Link></li>
           <li className="dropdown nav-dropdown">
             <Link><span style={{ fontWeight: "bold" }}>About ETE</span></Link>
             <div className="dropdown-content">
               <a href="/about">Introduction</a>
               <a href="#">Faculty List</a>
-              <a href="#">Link 3</a>
+              <a href="#">Notice</a>
             </div>
           </li>
           <li><Link to="/academic"><span style={{ fontWeight: "bold" }}>Academic</span></Link></li>
@@ -33,6 +33,11 @@ const Navbar = () => {
       </div>
       <div className='nav-right'>
         <ul className='nav-ul'>
+          {
+            !auth.user && (
+              <li><Link to="/signup"><span style={{ fontWeight: "bold" }}>Sign Up</span></Link></li>
+            )
+          }
           {
             !auth.user && (
               <li><Link to="/login"><span style={{ fontWeight: "bold" }}>Login</span></Link></li>

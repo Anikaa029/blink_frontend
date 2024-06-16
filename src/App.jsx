@@ -1,9 +1,11 @@
 import AdminPage from "./components/Admin/AdminPage";
 import NotFoundPage from "./components/NotFound";
 import HomePage from "./components/Home/HomePage";
-import Login from "./components/Login/Login"
+// import Login from "./components/Login/Login"
+import SignUp from "./components/Signup/Signup"
+import Login from "./components/LoginPage/LoginPage";
 import { Routes, Route } from 'react-router-dom'
-import NavBar from './components/Common/NavBar/NavBar'
+import NavBar from './components/Common/NavBar/NavBar';
 import Footer from './components/Common/Footer/Footer'
 // import { RequireAuth } from "./components/RequireAuth";
 import AboutPage from "./components/About/AboutPage";
@@ -15,6 +17,7 @@ import ContactPage from "./components/Contact/ContactPage";
 import AcademicPage from "./components/Academic/AcademicPage";
 import OffDays from "./components/OffDays/OffDays";
 import AdminForm from "./components/AdminForm/AdminForm";
+import { RequireAuth } from "./components/RequireAuth";
 
 export default function App() {
   return (
@@ -22,7 +25,7 @@ export default function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="admin" element={<AdminPage />} >
+        <Route path="admin" element={<RequireAuth><AdminPage /> </RequireAuth>} >
           <Route index element={<AdminForm/>} />
           <Route path="start-date" element={<AdminForm/>} />
           <Route path="off-days" element={<OffDays/>} />
@@ -35,6 +38,7 @@ export default function App() {
         <Route path="research" element={<ResearchPage />} />
         <Route path="contact-us" element={<ContactPage />} />
         <Route path="login" element={<Login />} />
+        <Route path="signup" element={<SignUp />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
