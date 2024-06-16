@@ -95,7 +95,7 @@ export default function AcademicPage() {
             </div>
             <div className="box">
               <h3 className='live-class'>Current Week</h3>
-              <p className="current-week">{getWeekNumber(batch.start_date)}</p>
+              <p className="current-week">{getWeekNumber(batch.start_date,currentDateTime, offDays)}</p>
             </div>
             <div className="box" style={{ backgroundColor: '#fdecea' }}>
               <h3 className='live-class'>Live Class</h3>

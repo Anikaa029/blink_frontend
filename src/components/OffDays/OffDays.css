@@ -67,3 +67,10 @@
 .custom-datepicker .react-datepicker__input-container {
   width: 100%;
 } */
+
+.off-days-input{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
