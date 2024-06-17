@@ -6,12 +6,12 @@ import { getWeekNumber } from '../../utils';
 export default function AcademicPage() {
   const [batches, setBatches] = useState([]);
   const [routineData, setRoutineData] = useState({});
-  const [offDays, setOffDays] = useState([]);
+  const [allOffDays, setAllOffDays] = useState([]);
 
   useEffect(() => {
     fetchBatches();
     fetchRoutineData();
-    fetchOffDays();
+    fetchAllOffDays();
     const interval = setInterval(fetchRoutineData, 1000);
 
     return () => clearInterval(interval); 
@@ -26,16 +26,15 @@ export default function AcademicPage() {
     }
   };
 
-  const fetchOffDays = async () => {
+  const fetchAllOffDays = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/get-off-days',{
-        batch: '18'
-      });
-      setOffDays(response.data.map(date => new Date(date)));
+        const response = await axios.get('http://localhost:3001/get-all-off-days');
+        setAllOffDays(response.data);
     } catch (error) {
-      console.error('There was an error fetching the off days!', error);
+        console.error('There was an error fetching the off days!', error);
+        setError('Error fetching the off days');
     }
-  };
+};
 
 
   const fetchRoutineData = async () => {
@@ -75,6 +74,12 @@ export default function AcademicPage() {
     }
   };
   
+
+  const getOffDaysAccordingToBatch =(batch_no) =>{
+    const temp = allOffDays.find(batch => batch.batch === batch_no);
+    const data = temp? temp.dates.map(date => new Date(date)) : [];
+    return data;
+  }
   
 
   const currentDateTime = new Date();
@@ -94,8 +99,12 @@ export default function AcademicPage() {
               <p>{batch.start_date}</p>
             </div>
             <div className="box">
+              <h3 className='live-class'>Level-Term</h3>
+              <p>{batch.level_term}</p>
+            </div>            
+            <div className="box">
               <h3 className='live-class'>Current Week</h3>
-              <p className="current-week">{getWeekNumber(batch.start_date,currentDateTime, offDays)}</p>
+              <p className="current-week">{getWeekNumber(batch.start_date,currentDateTime, getOffDaysAccordingToBatch(batch.batch))}</p>
             </div>
             <div className="box" style={{ backgroundColor: '#fdecea' }}>
               <h3 className='live-class'>Live Class</h3>

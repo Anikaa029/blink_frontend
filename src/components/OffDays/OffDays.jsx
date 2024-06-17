@@ -95,7 +95,7 @@ const OffDays = () => {
   return (
     <div className='off-days-container'>
       <div className="off-days-input">
-        <label className='label' htmlFor="batch">Select Batch:</label>
+        <label className='label' htmlFor="batch"><h1></h1>Select Batch:</label>
         <select
           id="batch"
           value={batch}

@@ -26,4 +26,11 @@ function getWeekNumber(startDate, currentDate, offDays) {
   return weekCount;
 }
 
-export {getWeekNumber, isOffDay }
+
+const getOffDaysAccordingToBatch =(batch_no) =>{
+  const temp = allOffDays.find(batch => batch.batch === batch_no);
+  const data = temp? temp.dates.map(date => new Date(date)) : [];
+  return data;
+}
+
+export {getWeekNumber, isOffDay, getOffDaysAccordingToBatch }

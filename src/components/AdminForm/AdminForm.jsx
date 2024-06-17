@@ -5,26 +5,30 @@ import './AdminForm.css';
 const AdminForm = () => {
   const [batch, setBatch] = useState('');
   const [startDate, setStartDate] = useState('');
+  const [levelTerm, setLevelTerm] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [buttonActive, setButtonActive] = useState(false);
 
   const batchOptions = ['18', '19', '20', '21', '22'];
+  const levelTermOptions = ['1-1', '1-2', '2-1', '2-2', '3-1', '3-2', '4-1', '4-2'];
 
   const handleSaveBatch = async () => {
-    if (!batch || !startDate) {
-      setErrorMessage('Please select batch and start date.');
+    if (!batch || !levelTerm || !startDate) {
+      setErrorMessage('Please select batch, level-term, and start date.');
       return;
     }
 
     try {
       await axios.post('http://localhost:3001/batches', {
         batch: batch,
+        levelTerm: levelTerm,
         startDate: startDate,
       });
 
       setBatch('');
       setStartDate('');
+      setLevelTerm('');
       setErrorMessage('');
       setSuccessMessage('Batch saved successfully.');
       setButtonActive(true);
@@ -58,6 +62,22 @@ const AdminForm = () => {
           </select>
         </div>
         <div className="form-group">
+          <label className='admin-label' htmlFor="level-term">Select Level-Term:</label>
+          <select
+            id="level-term"
+            value={levelTerm}
+            onChange={(e) => setLevelTerm(e.target.value)}
+            aria-label="Select Level-Term"
+          >
+            <option value="">Select Level-Term</option>
+            {levelTermOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="form-group">
           <label className='admin-label' htmlFor="starting-date">Class Starting Date:</label>
           <input
             type="date"
@@ -66,6 +86,7 @@ const AdminForm = () => {
             onChange={(e) => setStartDate(e.target.value)}
           />
         </div>
+
       </form>
       <div className="admin-containers">
         <button
