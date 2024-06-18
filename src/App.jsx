@@ -18,6 +18,7 @@ import AcademicPage from "./components/Academic/AcademicPage";
 import OffDays from "./components/OffDays/OffDays";
 import AdminForm from "./components/AdminForm/AdminForm";
 import { RequireAuth } from "./components/RequireAuth";
+import Notice from "./components/Notice/Notice";
 
 export default function App() {
   return (
@@ -39,6 +40,7 @@ export default function App() {
         <Route path="contact-us" element={<ContactPage />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
+        <Route path="notice" element={<Notice />} /> 
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />

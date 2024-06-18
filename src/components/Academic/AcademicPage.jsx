@@ -82,6 +82,10 @@ export default function AcademicPage() {
   }
   
 
+
+
+  console.log("Batches", batches)
+  
   const currentDateTime = new Date();
 
   return (

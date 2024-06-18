@@ -1,35 +1,34 @@
-// import React from 'react';
+import React from 'react';
 import './ResearchPage.css';
 
 const ResearchPage = () => {
   return (
-    <div className="research-container">
+    <div className="research-page">
       <header className="research-header">
         <h1>University Research</h1>
+        <p>Explore our latest research projects and innovations.</p>
       </header>
-      <nav className="research-nav">
-        <a href="#about">About</a>
-        <a href="#research_areas">Research Areas</a>
-        <a href="#publications">Publications</a>
-      </nav>
-      <section className="research-section" id="about">
-        <h2>About</h2>
-        <p>This is a website showcasing the research activities of our Department.</p>
+
+      <section className="research-projects">
+        <article className="project">
+          <h2>Project A</h2>
+          <p>Description of Project A. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel est vitae urna vestibulum gravida.</p>
+        </article>
+
+        <article className="project">
+          <h2>Project B</h2>
+          <p>Description of Project B. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel est vitae urna vestibulum gravida.</p>
+        </article>
+
+        <article className="project">
+          <h2>Project C</h2>
+          <p>Description of Project C. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel est vitae urna vestibulum gravida.</p>
+        </article>
       </section>
-      <section className="research-section" id="research_areas">
-        <h2>Research Areas</h2>
-        <p>Our department conducts research in various areas including:</p>
-        <ul>
-          <li>Microwave and Antenna Engineering</li>
-          <li>Artificial Intelligence</li>
-          <li>Renewable Energy</li>
-          <li>VLSI</li>
-        </ul>
-      </section>
-      <section className="research-section" id="publications">
-        <h2>Publications</h2>
-        <p>Explore our latest publications <a href="#">here</a>.</p>
-      </section>
+
+      <footer className="research-footer">
+        <p>For more information, contact us at research@university.edu</p>
+      </footer>
     </div>
   );
 };

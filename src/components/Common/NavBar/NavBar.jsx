@@ -22,7 +22,7 @@ const Navbar = () => {
             <div className="dropdown-content">
               <a href="/about">Introduction</a>
               <a href="#">Faculty List</a>
-              <a href="#">Notice</a>
+              <a href="/notice">Notice</a>
             </div>
           </li>
           <li><Link to="/academic"><span style={{ fontWeight: "bold" }}>Academic</span></Link></li>
