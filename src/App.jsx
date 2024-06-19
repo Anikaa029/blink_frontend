@@ -1,13 +1,11 @@
 import AdminPage from "./components/Admin/AdminPage";
 import NotFoundPage from "./components/NotFound";
 import HomePage from "./components/Home/HomePage";
-// import Login from "./components/Login/Login"
 import SignUp from "./components/Signup/Signup"
 import Login from "./components/LoginPage/LoginPage";
 import { Routes, Route } from 'react-router-dom'
 import NavBar from './components/Common/NavBar/NavBar';
 import Footer from './components/Common/Footer/Footer'
-// import { RequireAuth } from "./components/RequireAuth";
 import AboutPage from "./components/About/AboutPage";
 import SimulationLab from "./components/Lab/SimulationLab/SimulationLab";
 import CommunicationLab from "./components/Lab/Communication/CommunicationLab";
@@ -19,11 +17,14 @@ import OffDays from "./components/OffDays/OffDays";
 import AdminForm from "./components/AdminForm/AdminForm";
 import { RequireAuth } from "./components/RequireAuth";
 import Notice from "./components/Notice/Notice";
-
+import './App.css'
 export default function App() {
   return (
-    <div>
-      <NavBar />
+    <div className="app-container">
+      
+      <div className="app-nav">
+        <NavBar/> 
+      </div>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="admin" element={<RequireAuth><AdminPage /> </RequireAuth>} >
@@ -43,7 +44,10 @@ export default function App() {
         <Route path="notice" element={<Notice />} /> 
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-      <Footer />
+      <div className="footer "> 
+      <Footer/>
+      </div>
+     
     </div>
 
   );

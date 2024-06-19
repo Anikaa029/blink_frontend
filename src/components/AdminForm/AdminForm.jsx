@@ -20,23 +20,23 @@ const AdminForm = () => {
     }
 
     try {
-      await axios.post('http://localhost:3001/batches', {
+      const response= await axios.post('http://localhost:3001/batches', {
         batch: batch,
         levelTerm: levelTerm,
         startDate: startDate,
       });
-
+      console.log(response)
       setBatch('');
       setStartDate('');
       setLevelTerm('');
       setErrorMessage('');
-      setSuccessMessage('Batch saved successfully.');
+      setSuccessMessage(response.data.message);
       setButtonActive(true);
 
       setTimeout(() => {
         setSuccessMessage('');
         setButtonActive(false);
-      }, 3000);
+      }, 4000);
     } catch (error) {
       console.error('Error saving batch:', error);
       setErrorMessage('Error saving batch. Please try again.');
