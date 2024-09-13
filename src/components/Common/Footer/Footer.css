@@ -1,0 +1,182 @@
+.footer-dark {
+  padding: 25px 0; 
+  background: #333;
+  color: #fff;
+  margin-bottom: 0px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-md-4 {
+  flex-basis: calc(33.33% - 20px);
+  margin-right: 20px;
+}
+
+.item {
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.item h3 {
+  text-align: left;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+.new{
+  margin-left: 100px;
+}
+ul {
+  
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+  
+}
+
+ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  color: red;
+  transform: translateX(-3px);
+}
+
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+button[type="submit"] {
+  background: red;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.footter-button[type="submit"]:hover {
+  background: #ff0000;
+  transform: translateY(-3px); 
+}
+
+.contact-info div {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  
+  line-height: 2; 
+}
+
+.contact-info i {
+  margin-right: 5px;
+}
+
+.contact-info a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  color: red;
+}
+
+.footer-dark p {
+  text-align: left;
+  color: #fff;
+  margin-bottom: 5px;
+
+}
+.copyright{
+  margin-top: 50px;
+  height: 3vh;
+  text-align: left;
+  margin-left: 200px;
+  font-weight: 300;
+}
+
+
+.content{
+    width: 90%;
+    margin-top: 14%;
+    color: #ece7e7;
+    position:absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: left;
+}
+.content h3{
+    margin-left: 30px;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 40px;
+    text-shadow: #241818;
+    margin-bottom: 25px;
+}
+
+
+.course{
+
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+
+}
+h1{
+    font-size: 36px;
+    font-weight: 600;
+
+}
+p{
+    color:#111010;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding:10px;
+}
+.footer-row{
+
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.course-col{
+    flex-basis: 31%;
+    background: #fff3f3;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+
+}
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+
+}
+.course-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+
+}
+
+

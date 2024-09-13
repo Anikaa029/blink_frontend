@@ -1,0 +1,193 @@
+/* .container {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: rgb(56, 56, 113);
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  width: calc(30% - 20px);
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #c59b4f;
+}
+
+.card-body {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 16px;
+  color: #666;
+}
+
+.week-number {
+  font-size: 14px;
+  color: #ab1010;
+}
+
+.card-starting-date {
+  font-weight: bold;
+}
+
+.card-week {
+  font-weight: bold;
+}
+
+
+.live-class {
+  font-weight: bold;
+  color: #0d6efd;
+} */
+
+
+.academic-container{
+  padding: 40px;
+}
+.academic-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  padding-bottom: 20px;
+}
+
+.gradient-border {
+  --border-width: 3px;
+  position: relative;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  width: 80px;
+  /* height: 450px; */
+  background: #222;
+  border-radius: var(--border-width);
+  padding: 80px;
+}
+
+.gradient-border::after {
+  position: absolute;
+  content: "";
+  top: calc(-1 * var(--border-width));
+  left: calc(-1 * var(--border-width));
+  z-index: -1;
+  width: calc(100% + var(--border-width) * 2);
+  height: calc(100% + var(--border-width) * 2);
+  background: linear-gradient(
+    60deg,
+    hsl(224, 85%, 66%),
+    hsl(269, 85%, 66%),
+    hsl(2, 49%, 52%),
+    hsl(359, 85%, 66%),
+    hsl(234, 85%, 66%),
+    hsl(7, 91%, 45%),
+    hsl(29, 92%, 46%),
+    hsl(249, 95%, 22%)
+  );
+  background-size: 1000% 700%;
+  background-position: 60% 50%;
+  border-radius: calc(2 * var(--border-width));
+  animation: moveGradient 4s alternate infinite;
+}
+
+@keyframes moveGradient {
+50% {
+  background-position: 100% 50%;
+}
+}
+
+.schedule-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 2px;
+}
+
+.schedule-column {
+  flex: 8;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+  margin-right: 20px;
+}
+
+.schedule-column:last-child {
+  margin-right: 0;
+}
+
+.schedule-column:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.box {
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+  margin-bottom: 10px;
+}
+
+.box:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.current-week {
+  font-weight: bold;
+}
+
+.live-class{
+  display: flex;
+}
+
+.live-class-content {
+  font-weight: 700;
+  color: #121111;
+  animation: blink 0.5s infinite alternate;
+}
+
+@keyframes blink {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 9999; 
+}
+
+.close-button:hover {
+  background: #000;
+  color: #fff;
+}

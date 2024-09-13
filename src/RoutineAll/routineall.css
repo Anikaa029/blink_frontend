@@ -1,0 +1,51 @@
+.App {
+    margin-top: 15px;
+    margin-left: 20px;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 10px; /* Add padding for spacing */
+    text-align: center;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  .vertical-text {
+    display: block;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    margin-left: 30px;
+  }
+  
+  
+  select {
+    margin-left: 10px;
+    padding: 5px;
+  }
+  
+  label {
+    font-size: 1.2em;
+  }
+  
+  h1 {
+    margin: top 15px;
+    margin-bottom: 20px;
+  }
+  
+  .break, .lunch {
+    font-size: 1.2em;
+    font-weight: bold;
+    letter-spacing: 5px; /* Increase letter spacing for better readability */
+    line-height: 1.5; /* Adjust line height for vertical text */
+  }
