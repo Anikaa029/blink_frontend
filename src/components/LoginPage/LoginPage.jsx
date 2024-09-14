@@ -10,7 +10,8 @@ function Login() {
   const auth = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
-  const redirect = location.state?.path || '/';
+  // const redirect = location.state?.path || '/';
+  const redirect ='/admin'
 
   const handleLogin = async (e) => {
     e.preventDefault();

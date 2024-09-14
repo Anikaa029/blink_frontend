@@ -37,9 +37,16 @@ const MasterRoutine = () => {
                 setLoading(false);
             }
         };
-
+        setSelectedDay(getCurrentDay())
         fetchRoutine();
     }, []);
+
+
+    const getCurrentDay = () => {
+        const daysOfWeek = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+        const currentDayIndex = new Date().getDay();
+        return daysOfWeek[currentDayIndex];
+      };
 
     const handleDayChange = (event) => {
         setSelectedDay(event.target.value.toLowerCase());
@@ -87,12 +94,11 @@ const MasterRoutine = () => {
     }
 
     return (
-        <div className="Appss">
+        <div className="App">
             <h1>Academic Routine</h1>
             <label>
                 Select Day:
-                <select onChange={handleDayChange}>
-                    <option value="">--Select Day--</option>
+                <select value={selectedDay} onChange={handleDayChange}>
                     <option value="sunday">Sunday</option>
                     <option value="monday">Monday</option>
                     <option value="tuesday">Tuesday</option>
