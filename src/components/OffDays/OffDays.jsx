@@ -10,7 +10,7 @@ const OffDays = () => {
   const [offDays, setOffDays] = useState([]);
   const [batch, setBatch] = useState('18');
 
-  const batchOptions = ['18', '19', '20', '21', '22'];
+  const batchOptions = ['18', '19', '20', '21', '22', 'all'];
 
   useEffect(() => {
     axios.post('http://localhost:3001/get-off-days',{

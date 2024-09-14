@@ -28,7 +28,13 @@ const Navbar = () => {
           <li><Link to="/academic"><span style={{ fontWeight: "bold" }}>Academic</span></Link></li>
           <li><Link to="/research"><span style={{ fontWeight: "bold" }}>Research</span></Link></li>
           <li><Link to="/contact-us"><span style={{ fontWeight: "bold" }}>Contact</span></Link></li>
-          <li><Link to="/admin"><span style={{ fontWeight: "bold" }}>Admin</span></Link></li>
+
+          {
+            auth.user? 
+              <li><Link to="/admin"><span style={{ fontWeight: "bold" }}>Admin</span></Link></li>
+              : ''
+          }
+            
           <li><Link to="/routineall"><span style={{ fontWeight: "bold" }}>Master Routine</span></Link></li>
         </ul>
       </div>
